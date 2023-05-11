@@ -9,6 +9,8 @@ function map(mode, lhs, rhs, opts)
     end
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+-- 设置jj退出insert
+map('i', 'jj', '<Esc>', {noremap = true})
 
 -- 刷新lua配置
 map('n', '<leader>rs', ':luafile ~/.config/nvim/init.lua<CR>', {noremap = true})
@@ -36,14 +38,28 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- lazy git
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
-
 -- lspsaga
 keymap("n", "[E", function() require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
 keymap("n", "]E", function() require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
 keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
--- Code action
 keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
--- Rename
 keymap("n", "rn", "<cmd>Lspsaga rename<CR>", { silent = true })
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+keymap("n", "gf", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
+keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>p", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+keymap("n", "<leader>n", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
+-- Comment
+keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end)
+
+-- format
+map("n", "<C-s>", ":Neoformat<CR>", opt)
+
+-- insert mode move cursor
+map("i", "<C-l>", "<RIGHT>")
+map("i", "<C-h>", "<LEFT>")
+
+-- close tab for buffer line
+keymap({"n","v"}, "<leader>cb", ":bdelet<CR>")

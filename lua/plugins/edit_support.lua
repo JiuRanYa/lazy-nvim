@@ -14,5 +14,13 @@ return {
 				debounce_delay = 200,
 			})
 		end,
-	}
+	},
+	{
+		"numToStr/Comment.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
+	{ "RRethy/vim-illuminate", event = "VeryLazy" },
 }
