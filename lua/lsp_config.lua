@@ -1,6 +1,5 @@
 local nvim_lsp = require("lspconfig")
 
-
 require("mason").setup({
 	ui = {
 		icons = {

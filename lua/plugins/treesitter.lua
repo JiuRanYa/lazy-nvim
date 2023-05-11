@@ -4,6 +4,7 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("nvim-treesitter.configs").setup({
+				ensure_installed = { "javascript", "html", "json", "vue", "vim", "typescript", "scss", "css" },
 				matchup = {
 					enable = true, -- mandatory, false will disable the whole extension
 				},
