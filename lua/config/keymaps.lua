@@ -18,6 +18,7 @@ map('n', '<leader>rs', ':luafile ~/.config/nvim/init.lua<CR>', {noremap = true})
 map('n', ';', ':noh<CR>')
 -- nvim-tree
 map("n", "<C-b>", ":NvimTreeToggle<CR>", {}) -- open/close
+map("n", "<C-f>", ":NvimTreeFindFile<CR>", {}) -- open/close
 
 -- buffer line 切换
 map("n", "<S-h>", ":BufferLineCyclePrev<CR>", opt)

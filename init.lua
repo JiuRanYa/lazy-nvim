@@ -28,7 +28,6 @@ vim.opt.swapfile = false
 set.number = true
 set.relativenumber = true
 set.autoread = true
-set.mouse = "a"
 -- set.guicursor = "a:blinkon1,i:ver25"
 set.encoding = "utf8"
 set.termguicolors = true
@@ -38,7 +37,6 @@ set.sw = 2
 set.hlsearch = true
 set.autoindent = true
 set.smartindent = true
-set.clipboard = "unnamed"
 -- https://www.youtube.com/watch?v=yMs97o_TdBU&t=344s&ab_channel=BenFrain
 -- make window width same when close a window
 set.sessionoptions = "blank"
