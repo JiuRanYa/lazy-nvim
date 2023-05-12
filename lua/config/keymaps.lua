@@ -15,6 +15,7 @@ map('i', 'jj', '<Esc>', {noremap = true})
 -- 刷新lua配置
 map('n', '<leader>rs', ':luafile ~/.config/nvim/init.lua<CR>', {noremap = true})
 
+map('n', ';', ':noh<CR>')
 -- nvim-tree
 map("n", "<C-b>", ":NvimTreeToggle<CR>", {}) -- open/close
 
@@ -46,6 +47,7 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 keymap("n", "rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+keymap("n", "fd", "<cmd>Lspsaga find_definition<CR>", { silent = true })
 keymap("n", "gf", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 keymap("n", "<leader>p", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
