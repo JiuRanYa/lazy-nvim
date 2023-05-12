@@ -39,7 +39,7 @@ return {
 				},
 				highlight = {
 					-- disable highlight for variable and package in file
-					enable = false,
+					enable = true,
 					additional_vim_regex_highlighting = false,
 					disable = {},
 				},

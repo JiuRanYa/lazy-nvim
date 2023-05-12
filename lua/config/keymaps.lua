@@ -1,6 +1,8 @@
 local keymap = vim.keymap.set
 
 local builtin = require('telescope.builtin')
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
 
 function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
@@ -9,6 +11,17 @@ function map(mode, lhs, rhs, opts)
     end
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+
+function NvimTreeOSOpen()
+    local lib = require "nvim-tree.lib"
+    local node = lib.get_node_at_cursor()
+    if node then
+      vim.fn.jobstart("open '" .. node.absolute_path .. "' &", {detach = true})
+    end
+end
+
+keymap("n", "<leader>of", function () NvimTreeOSOpen() end)
+
 -- 设置jj退出insert
 map('i', 'jj', '<Esc>', {noremap = true})
 
@@ -66,3 +79,23 @@ map("i", "<C-h>", "<LEFT>")
 
 -- close tab for buffer line
 keymap({"n","v"}, "<leader>cb", ":bdelet<CR>")
+
+
+-- motion with hop
+keymap("n", "<leader>w", ":HopWordMW<CR>", opt)
+keymap('', 'f', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, {remap=true})
+keymap('', 'F', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, {remap=true})
+keymap('', 't', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+end, {remap=true})
+keymap('', 'T', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+end, {remap=true})
+
+keymap("n", "[c", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true })

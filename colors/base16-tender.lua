@@ -640,6 +640,7 @@ hi(0, "rainbowcol5", { fg = "#73cef4" })
 hi(0, "rainbowcol6", { fg = "#b3deef" })
 hi(0, "rainbowcol7", { fg = "#d3b987" })
 
+
 -- Terminal colors
 local g = vim.g
 
