@@ -12,6 +12,7 @@ end
 -- 字体
 vim.o.guifont = "JetBrains Mono:h15"
 
+
 vim.cmd([[
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
