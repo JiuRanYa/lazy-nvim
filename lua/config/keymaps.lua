@@ -61,7 +61,7 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 keymap("n", "rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
-keymap("n", "fd", "<cmd>Lspsaga find_definition<CR>", { silent = true })
+keymap("n", "fd", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 keymap("n", "gf", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 keymap("n", "<leader>p", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
@@ -74,12 +74,11 @@ keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.curre
 map("n", "<C-s>", ":Neoformat<CR>", opt)
 
 -- insert mode move cursor
-map("i", "<C-l>", "<RIGHT>")
+--map("i", "<C-l>", "<RIGHT>")
 map("i", "<C-h>", "<LEFT>")
 
 -- close tab for buffer line
 keymap({"n","v"}, "<leader>cb", ":bdelet<CR>")
-
 
 -- motion with hop
 keymap("n", "<leader>w", ":HopWordMW<CR>", opt)
