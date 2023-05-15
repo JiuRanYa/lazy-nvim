@@ -47,7 +47,9 @@ set.ignorecase = true
 set.modifiable = true
 set.hidden = true
 set.autoindent = true
---set.mouse = "a"
+set.mouse = "a"
+
+set.clipboard = "unnamed"
 
 -- 主题
 vim.cmd.colorscheme("base16-tender")

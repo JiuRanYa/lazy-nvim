@@ -23,4 +23,5 @@ return {
 		end,
 	},
 	{ "RRethy/vim-illuminate", event = "VeryLazy" },
+	{"windwp/nvim-ts-autotag", event = "VeryLazy"}
 }

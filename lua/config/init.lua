@@ -15,7 +15,7 @@ require("lazy").setup({
   }}},
 })
 
-local modules = {"config.vimc", "config.keymaps"}
+local modules = {"config.vimc", "config.keymaps", "config.autocmd"}
 
 for _, mod in ipairs(modules) do
     local ok, err = pcall(require, mod)

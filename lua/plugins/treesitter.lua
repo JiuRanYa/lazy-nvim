@@ -23,37 +23,34 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "javascript", "html", "json", "vue", "vim", "typescript", "scss", "css" },
-				matchup = {
-					enable = true, -- mandatory, false will disable the whole extension
-				},
-				incremental_selection = {
+				ensure_installed = { "javascript", "html", "json", "vue", "vim", "typescript", "scss" },
+				-- 启用代码高亮模块
+				highlight = {
 					enable = true,
-					keymaps = {
-						node_incremental = "v",
-						node_decremental = "<BS>",
-					},
+					additional_vim_regex_highlighting = false,
 				},
 				autotag = {
 					enable = true,
 				},
-				highlight = {
-					-- disable highlight for variable and package in file
-					enable = true,
-					additional_vim_regex_highlighting = false,
-					disable = {},
-				},
+				-- 启用代码缩进模块 (=)
 				indent = {
-					-- because it's buggy
-					enable = false,
+					enable = true,
 				},
+				-- p00f/nvim-ts-rainbow
 				rainbow = {
 					enable = true,
 					-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
 					extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
 					max_file_lines = nil, -- Do not enable for files with more than n lines, int
-					-- colors = {}, -- table of hex strings
-					-- termcolors = {} -- table of colour name strings
+					colors = {
+						"#95ca60",
+						"#ee6985",
+						"#D6A760",
+						"#7794f4",
+						"#b38bf5",
+						"#7cc7fe",
+					}, -- table of hex strings
+					-- termcolors = { } -- table of colour name strings
 				},
 			})
 		end,
