@@ -1,6 +1,5 @@
 local keymap = vim.keymap.set
 
-local builtin = require('telescope.builtin')
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 
@@ -51,32 +50,25 @@ vim.keymap.set("n", "<S-Up>", ":resize +5<CR>", opt)
 -- 保存文件
 map("n", "<C-s>", ":w<CR>", {})
 
--- telescope
--- vim.keymap.set('n', '<leader>f', builtin.find_files, {})
--- vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
--- vim.keymap.set('n', '<leader>o', builtin.oldfiles, {})
-
 -- lazy git
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 -- lspsaga
-keymap("n", "[E", function() require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
-keymap("n", "]E", function() require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
-keymap("n","<leader>O", "<cmd>Lspsaga outline<CR>")
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
-keymap("n", "rn", "<cmd>Lspsaga rename<CR>", { silent = true })
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
-keymap("n", "fd", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
-keymap("n", "gf", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+-- keymap("n", "[E", function() require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
+-- keymap("n", "]E", function() require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
+keymap("n","<leader>O", ":Lspsaga outline<CR>")
+keymap("n", "K", ":Lspsaga hover_doc<CR>", { silent = true })
+keymap({"n","v"}, "<leader>ca", ":Lspsaga code_action<CR>", { silent = true })
+keymap("n", "rn", ":Lspsaga rename<CR>", { silent = true })
+keymap("n", "gd", ":Lspsaga peek_definition<CR>", { silent = true })
+keymap("n", "fd", ":Lspsaga lsp_finder<CR>", { silent = true })
+keymap("n", "gf", ":Lspsaga goto_definition<CR>", { silent = true })
+keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", { silent = true })
 -- keymap("n", "<leader>P", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 -- keymap("n", "<leader>N", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Comment
-keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end)
+ keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end)
 
 -- format
 map("n", "<C-s>", ":Neoformat<CR>", opt)
