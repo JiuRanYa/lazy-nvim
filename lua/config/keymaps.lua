@@ -11,16 +11,6 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function NvimTreeOSOpen()
-    local lib = require "nvim-tree.lib"
-    local node = lib.get_node_at_cursor()
-    if node then
-      vim.fn.jobstart("open '" .. node.absolute_path .. "' &", {detach = true})
-    end
-end
-
-keymap("n", "<leader>of", function () NvimTreeOSOpen() end)
-
 -- 设置jj退出insert
 map('i', 'jj', '<Esc>', {noremap = true})
 
@@ -74,7 +64,7 @@ keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", { silent = true 
 map("n", "<C-s>", ":Neoformat<CR>", opt)
 
 -- insert mode move cursor
---map("i", "<C-l>", "<RIGHT>")
+map("i", "<C-l>", "<RIGHT>")
 map("i", "<C-h>", "<LEFT>")
 
 -- close tab for buffer line

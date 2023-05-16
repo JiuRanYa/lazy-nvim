@@ -1,13 +1,14 @@
 return {
 	{
 		"windwp/nvim-autopairs",
-		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
 	},
 	{
 		"Pocco81/auto-save.nvim",
+		event = "VeryLazy",
 		config = function ()
 			require('auto-save').setup({
 				enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
@@ -17,7 +18,7 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		event = "VeryLazy",
+		lazy = true,
 		config = function()
 			require("Comment").setup()
 		end,
