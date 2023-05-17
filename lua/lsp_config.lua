@@ -15,8 +15,21 @@ require("mason-lspconfig").setup({
 })
 
 local common_servers = {
-	 "tsserver",
-	 "html"
+	"tsserver",
+	"html",
+	"cssls"
+}
+
+nvim_lsp.volar.setup({
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+  init_options = {
+  },
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require'lspconfig'.clangd.setup {
+  capabilities = capabilities,
 }
 
 for _, server in pairs(common_servers) do
@@ -30,12 +43,3 @@ for _, server in pairs(common_servers) do
 		capabilities = capabilities,
 	})
 end
-
-nvim_lsp.volar.setup({
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-  init_options = {
-  },
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
