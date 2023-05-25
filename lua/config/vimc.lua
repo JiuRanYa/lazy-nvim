@@ -10,6 +10,7 @@ vim.cmd([[
 ]])
 
 vim.g.vsnip_filetypes = {
-  typescriptreact = {"javascript", 'typescript', 'typescriptreact'}
+  typescriptreact = {"javascript", 'typescript', 'typescriptreact'},
+	typescript = {"javascript", 'typescript', 'typescriptreact'}
 }
 
