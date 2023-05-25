@@ -1,8 +1,3 @@
-vim.g.vsnip_filetypes = {
-  typescript = { "javascript" },
-}
-
-
 return {
 	{
 		"hrsh7th/nvim-cmp",

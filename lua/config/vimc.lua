@@ -8,3 +8,8 @@ vim.cmd("hi IlluminatedWordRead guibg=#525252 gui=none")
 vim.cmd([[
   command! OpenInFinder execute "!open " . shellescape(expand("%:p:h"))
 ]])
+
+vim.g.vsnip_filetypes = {
+  typescriptreact = {"javascript", 'typescript', 'typescriptreact'}
+}
+
