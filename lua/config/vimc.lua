@@ -9,10 +9,10 @@ vim.cmd("hi IlluminatedWordRead guibg=#525252 gui=none")
 --   command! OpenInFinder execute "!open " . shellescape(expand("%:p:h"))
 -- ]])
 --
--- vim.g.vsnip_filetypes = {
---   typescriptreact = {"javascript", 'typescript', 'typescriptreact'},
--- 	typescript = {"javascript", 'typescript', 'typescriptreact'}
--- }
+vim.g.vsnip_filetypes = {
+  typescriptreact = {"javascript", 'typescript', 'typescriptreact'},
+	typescript = {"javascript", 'typescript', 'typescriptreact'}
+}
 --
 vim.api.nvim_create_user_command('OpenInFinder',
 	function()
