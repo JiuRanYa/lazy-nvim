@@ -15,7 +15,6 @@ vim.g.vsnip_filetypes = {
 }
 --
 function open_folder_in_finder()
-	-- 获取 nvim-tree 插件的 API
 	local api = require "nvim-tree.api"
 	local node = api.tree.get_node_under_cursor()
 
