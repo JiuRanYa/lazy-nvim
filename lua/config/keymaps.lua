@@ -26,6 +26,12 @@ map("n", "<C-f>", ":NvimTreeFindFile<CR>", {}) -- open/close
 map("n", "<S-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<S-l>", ":BufferLineCycleNext<CR>", opt)
 
+-- 关闭当前缓冲区
+map('n', '<leader>bd', ':BufferLineClose<CR>', opts)
+
+-- 关闭除当前缓冲区外的所有缓冲区
+map('n', '<leader>bD', ':BufferLineCloseAllButCurrent<CR>', opts)
+
 -- 窗口切换
 map("n", "<leader>h", "<C-w>h", opt)
 map("n", "<leader>l", "<C-w>l", opt)
