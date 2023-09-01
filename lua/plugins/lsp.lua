@@ -39,6 +39,11 @@ return {
 			-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
 			"folke/neodev.nvim",
 		},
+		opts = {
+      servers = {
+        dartls = {},
+      },
+    },
 		config = function()
 			require("lsp_config")
 		end,
