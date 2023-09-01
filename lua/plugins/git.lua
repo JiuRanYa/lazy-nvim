@@ -16,6 +16,9 @@ return {
 	{
 		'tpope/vim-fugitive',
 		event = 'VeryLazy',
+		config = function()
+			vim.cmd.cnoreabbrev([[git Git]])
+		end,
 		cmd = 'Git'
 	}
 }
