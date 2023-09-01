@@ -12,5 +12,10 @@ return {
 				},
 			})
 		end
+	},
+	{
+		'tpope/vim-fugitive',
+		event = 'VeryLazy',
+		cmd = 'Git'
 	}
 }
