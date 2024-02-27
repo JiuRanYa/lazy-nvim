@@ -60,8 +60,8 @@ keymap("n", "gd", ":Lspsaga peek_definition<CR>", { silent = true })
 keymap("n", "fd", ":Lspsaga lsp_finder<CR>", { silent = true })
 keymap("n", "gf", ":Lspsaga goto_definition<CR>", { silent = true })
 keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", { silent = true })
--- keymap("n", "<leader>P", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
--- keymap("n", "<leader>N", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+keymap("n", "<leader>,", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+keymap("n", "<leader>.", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Comment
  keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end)
