@@ -24,13 +24,13 @@ nvim_lsp.volar.setup({
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   init_options = {
   },
-	capabilities: {
-		workspace: {
-			didChangeWatchedFiles: {
-				dynamicRegistration: true
-			}
-		}
-	}
+	capabilities = {
+		workspace = {
+			didChangeWatchedFiles = {
+				dynamicRegistration = true
+			},
+		},
+	},
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
