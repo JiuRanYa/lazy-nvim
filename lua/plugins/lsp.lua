@@ -1,24 +1,29 @@
 return {
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		event = "VeryLazy",
-		config = function()
-			local null_ls = require("null-ls")
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.formatting.nginx_beautifier,
-					null_ls.builtins.formatting.gofumpt,
-					null_ls.builtins.code_actions.shellcheck,
-					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.formatting.jq,
-					-- for python
-					null_ls.builtins.formatting.black,
-					null_ls.builtins.formatting.isort,
-					null_ls.builtins.diagnostics.hadolint,
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"jose-elias-alvarez/null-ls.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		local null_ls = require("null-ls")
+	-- 		null_ls.setup({
+	-- 			sources = {
+	-- 				null_ls.builtins.formatting.nginx_beautifier,
+	-- 				null_ls.builtins.formatting.gofumpt,
+	-- 				null_ls.builtins.code_actions.shellcheck,
+	-- 				null_ls.builtins.formatting.stylua,
+	-- 				null_ls.builtins.formatting.jq,
+	-- 				-- for python
+	-- 				null_ls.builtins.formatting.black,
+	-- 				null_ls.builtins.formatting.isort,
+	-- 				null_ls.builtins.diagnostics.hadolint,
+	-- 				-- null_ls.builtins.diagnostics.eslint_d.with({
+	-- 				-- 	cwd = function(params)
+	-- 				-- 			return require("lspconfig.util").root_pattern("tsconfig.json")(params.bufname)
+	-- 				-- 	end,
+	-- 				-- }),
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"folke/neodev.nvim",
 		event = "VeryLazy",
