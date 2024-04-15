@@ -40,10 +40,10 @@ return {
 			"folke/neodev.nvim",
 		},
 		opts = {
-      servers = {
-        dartls = {},
-      },
-    },
+			servers = {
+				dartls = {},
+			},
+		},
 		config = function()
 			require("lsp_config")
 		end,
@@ -51,8 +51,8 @@ return {
 	{ "onsails/lspkind.nvim", event = "VeryLazy" },
 	{ "glepnir/lspsaga.nvim", commit = "b7b4777", event = "VeryLazy" },
 	{
-    "williamboman/mason.nvim",
-		config = function() 
+		"williamboman/mason.nvim",
+		config = function()
 			require("mason")
 		end,
 	},

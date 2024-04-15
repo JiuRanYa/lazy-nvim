@@ -53,8 +53,8 @@ set.clipboard = "unnamed"
 -- 主题
 vim.cmd.colorscheme("base16-tender")
 
-if vim.fn.has('nvim-0.8') == 0 then
-  error('Need Neovim 0.8+ in order to use this config')
+if vim.fn.has("nvim-0.8") == 0 then
+	error("Need Neovim 0.8+ in order to use this config")
 end
 
 -- Load main config

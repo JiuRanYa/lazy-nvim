@@ -9,8 +9,8 @@ return {
 	{
 		"Pocco81/auto-save.nvim",
 		event = "VeryLazy",
-		config = function ()
-			require('auto-save').setup({
+		config = function()
+			require("auto-save").setup({
 				enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
 				debounce_delay = 200,
 			})
@@ -24,5 +24,5 @@ return {
 		end,
 	},
 	{ "RRethy/vim-illuminate", event = "VeryLazy" },
-	{"windwp/nvim-ts-autotag", event = "VeryLazy"}
+	{ "windwp/nvim-ts-autotag", event = "VeryLazy" },
 }

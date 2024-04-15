@@ -1,7 +1,7 @@
 return {
 	{
 		"hrsh7th/nvim-cmp",
-		config = function () 
+		config = function()
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
 
@@ -35,16 +35,16 @@ return {
 					{ name = "luasnip", priority = 60 },
 					{ name = "nvim_lsp", priority = 90 },
 					-- { name = "cmp_tabnine", priority = 98, max_item_count = 2, keyword_length = 3 },
-					{ name = "buffer", priority = 80},
-					{ name = "path", priority = 80},
+					{ name = "buffer", priority = 80 },
+					{ name = "path", priority = 80 },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lua" },
-					{ name = "vsnip" }
+					{ name = "vsnip" },
 				},
 				mapping = cmp.mapping.preset.insert({
-					['<C-k>'] = cmp.mapping.select_prev_item(),
+					["<C-k>"] = cmp.mapping.select_prev_item(),
 					-- 下一个
-					['<C-j>'] = cmp.mapping.select_next_item(),
+					["<C-j>"] = cmp.mapping.select_next_item(),
 					-- abort
 					["<C-c>"] = cmp.mapping.abort(),
 					["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -107,7 +107,7 @@ return {
 			"hrsh7th/vim-vsnip",
 			"hrsh7th/cmp-vsnip",
 			"hrsh7th/vim-vsnip-integ",
-			"rafamadriz/friendly-snippets"
+			"rafamadriz/friendly-snippets",
 		},
 	},
 }

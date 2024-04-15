@@ -44,7 +44,7 @@ vim.keymap.set("n", "<S-Left>", ":vertical resize -5<CR>", opt)
 vim.keymap.set("n", "<S-Up>", ":resize +5<CR>", opt)
 
 -- 保存文件
-map("n", "<C-s>", ":w<CR>", {})
+map("n", "<C-s>", ":w<CR>", opt)
 
 -- lazy git
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
@@ -64,10 +64,10 @@ keymap("n", "<leader>,", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = tru
 keymap("n", "<leader>.", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Comment
- keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end)
+keymap("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end)
 
 -- format
-map("n", "<C-s>", ":Neoformat<CR>", opt)
+-- keymap("n", "<C-s>", function() require("conform").format({ bufnr = args.buf }) end, opt)
 
 -- insert mode move cursor
 map("i", "<C-l>", "<RIGHT>")
